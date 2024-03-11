@@ -63,7 +63,7 @@ function Profile() {
                         <input 
                             type="text" 
                             placeholder='Enter Your name'
-                            className=' form-input border hover:border-orange-500  p-4 rounded-md w-full'
+                            className=' form-input border   p-4 rounded-md w-full'
                             value={username}
                             onChange={(e)=>setUserName(e.target.value)}
                         />
@@ -79,7 +79,7 @@ function Profile() {
                         <input 
                             type="email" 
                             placeholder='Enter Your email'
-                            className=' form-input border hover:border-orange-500 p-4 rounded-md w-full'
+                            className=' form-input border  p-4 rounded-md w-full'
                             value={email}
                             onChange={(e)=>setEmail(e.target.value)}
                         />
@@ -96,7 +96,7 @@ function Profile() {
                         <input 
                             type="password" 
                             placeholder='Enter Your password'
-                            className=' form-input border hover:border-orange-500 p-4 rounded-md w-full'
+                            className=' form-input border  p-4 rounded-md w-full'
                             value={password}
                             onChange={(e)=>setPassword(e.target.value)}
                         />
@@ -112,7 +112,7 @@ function Profile() {
                         <input 
                             type="password" 
                             placeholder='Confirm password'
-                            className=' form-input border hover:border-orange-500 p-4 rounded-md w-full'
+                            className=' form-input border  p-4 rounded-md w-full'
                             value={confirmPassword}
                             onChange={(e)=>setConfirmPassword(e.target.value)}
                         />

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import{
   useCreateCategoryMutation,
   useUpdateCategoryMutation,
@@ -11,7 +11,9 @@ import {toast} from 'react-toastify'
 import AdminMenu from './AdminMenu'
 
 function CategoryList() {
-  const {data:categories}=useFetchCategoriesQuery()
+
+
+  const {data:categories,refetch: refetchCategories}=useFetchCategoriesQuery()
   // console.log(categories)
   
   const [name,setName]=useState("")
@@ -22,6 +24,7 @@ function CategoryList() {
   const[createCategory]=useCreateCategoryMutation()
   const[updateCategory]=useUpdateCategoryMutation()
   const [deleteCategory]=useDeleteCategoryMutation()
+
 
   const handleCreateCategory=async(e)=>{
       e.preventDefault()
@@ -36,8 +39,10 @@ function CategoryList() {
         if(result.error){
           toast.error(result.error)
         }else{
-          setName("")
+          setName()
           toast.success(`${result.name} is created.`)
+          refetchCategories();
+
         }
         
       } catch (error) {
@@ -67,8 +72,9 @@ function CategoryList() {
        }else{
         toast.success(`${result.name} is updated`)
         setSelectedcategory(null)
-        setUpdatingName("")
+        setUpdatingName()
         setModalVisible(false)
+        refetchCategories()
        }
      } catch (error) {
        console.log(error);
@@ -85,6 +91,7 @@ function CategoryList() {
           toast.success(`${result.name} is deleted.`)
           setSelectedcategory(null)
           setModalVisible(false)
+          refetchCategories()
         }
       } catch (error) {
         console.log(error);

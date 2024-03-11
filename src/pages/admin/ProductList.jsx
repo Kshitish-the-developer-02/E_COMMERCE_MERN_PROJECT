@@ -104,7 +104,7 @@ const ProductList = () => {
                 <input
                   type="text"
                   placeholder=" "
-                  className="p-4 mb-3 w-[30rem] border rounded-lg bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 text-black"
+                  className="p-4 mb-3 w-[30rem] border rounded-lg bg-white text-black"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                 />
@@ -113,7 +113,7 @@ const ProductList = () => {
                 <label htmlFor="name block">Price</label> <br />
                 <input
                   type="number"
-                  className="p-4 mb-3 w-[30rem] border rounded-lg bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 text-black"
+                  className="p-4 mb-3 w-[30rem] border rounded-lg bg-white text-black"
                   value={price}
                   onChange={(e) => setPrice(e.target.value)}
                 />
@@ -124,7 +124,7 @@ const ProductList = () => {
                 <label htmlFor="name block">Quantity</label> <br />
                 <input
                   type="number"
-                  className="p-4 mb-3 w-[30rem] border rounded-lg bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 text-black"
+                  className="p-4 mb-3 w-[30rem] border rounded-lg bg-white text-black"
                   value={quantity}
                   onChange={(e) => setQuantity(e.target.value)}
                 />
@@ -133,7 +133,7 @@ const ProductList = () => {
                 <label htmlFor="name block">Brand</label> <br />
                 <input
                   type="text"
-                  className="p-4 mb-3 w-[30rem] border rounded-lg bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 text-black"
+                  className="p-4 mb-3 w-[30rem] border rounded-lg bg-white text-black"
                   value={brand}
                   onChange={(e) => setBrand(e.target.value)}
                 />
@@ -145,7 +145,7 @@ const ProductList = () => {
             </label>
             <textarea
               type="text"
-              className="p-2 mb-3 bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 border rounded-lg w-[95%] text-black"
+              className="p-2 mb-3 bg-white border rounded-lg w-[95%] text-black"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
             ></textarea>
@@ -155,7 +155,7 @@ const ProductList = () => {
                 <label htmlFor="name block">Count In Stock</label> <br />
                 <input
                   type="text"
-                  className="p-4 mb-3 w-[30rem] border rounded-lg bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 text-black"
+                  className="p-4 mb-3 w-[30rem] border rounded-lg bg-white text-black"
                   value={stock}
                   onChange={(e) => setStock(e.target.value)}
                 />
@@ -165,12 +165,14 @@ const ProductList = () => {
                 <label htmlFor="">Category</label> <br />
                 <select
                   placeholder="Choose Category"
-                  className="p-4 mb-3 w-[30rem] border rounded-lg bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 text-black"
+                  className="p-4 mb-3 w-[30rem] border rounded-lg bg-white text-black"
                   onChange={(e) => setCategory(e.target.value)}
                 >
-                  <option value="" className="bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400">select</option>
+                  <option value="" className="bg-white">
+                    select
+                  </option>
                   {categories?.map((c) => (
-                    <option key={c._id} value={c._id} className=" bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400">
+                    <option key={c._id} value={c._id} className=" bg-white">
                       {c.name}
                     </option>
                   ))}
@@ -192,4 +194,3 @@ const ProductList = () => {
 };
 
 export default ProductList;
-

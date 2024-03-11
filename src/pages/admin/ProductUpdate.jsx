@@ -23,7 +23,7 @@ const AdminProductUpdate = () => {
     productData?.description || ""
   );
   const [price, setPrice] = useState(productData?.price || "");
-  const [category, setCategory] = useState(productData?.category || "");
+  const [category, setCategory] = useState(productData?.category || {});
   const [quantity, setQuantity] = useState(productData?.quantity || "");
   const [brand, setBrand] = useState(productData?.brand || "");
   const [stock, setStock] = useState(productData?.countInStock);
@@ -168,7 +168,7 @@ const AdminProductUpdate = () => {
                   <label htmlFor="name">Name</label> <br />
                   <input
                     type="text"
-                    className="p-4 mb-3 w-[30rem] border rounded-lg bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 text-black font-semibold mr-[5rem]"
+                    className="p-4 mb-3 w-[30rem] border rounded-lg bg-white text-black font-semibold mr-[5rem]"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                   />
@@ -178,7 +178,7 @@ const AdminProductUpdate = () => {
                   <label htmlFor="name block">Price</label> <br />
                   <input
                     type="number"
-                    className="p-4 mb-3 w-[30rem] border rounded-lg bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 text-black font-semibold "
+                    className="p-4 mb-3 w-[30rem] border rounded-lg bg-white text-black font-semibold "
                     value={price}
                     onChange={(e) => setPrice(e.target.value)}
                   />
@@ -191,7 +191,7 @@ const AdminProductUpdate = () => {
                   <input
                     type="number"
                     min="1"
-                    className="p-4 mb-3 w-[30rem] border rounded-lg bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 text-black font-semibold mr-[5rem]"
+                    className="p-4 mb-3 w-[30rem] border rounded-lg bg-white text-black font-semibold mr-[5rem]"
                     value={quantity}
                     onChange={(e) => setQuantity(e.target.value)}
                   />
@@ -200,7 +200,7 @@ const AdminProductUpdate = () => {
                   <label htmlFor="name block">Brand</label> <br />
                   <input
                     type="text"
-                    className="p-4 mb-3 w-[30rem] border rounded-lg bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 text-black font-semibold "
+                    className="p-4 mb-3 w-[30rem] border rounded-lg bg-white text-black font-semibold "
                     value={brand}
                     onChange={(e) => setBrand(e.target.value)}
                   />
@@ -212,7 +212,7 @@ const AdminProductUpdate = () => {
               </label>
               <textarea
                 type="text"
-                className="p-2 mb-3 bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400  border rounded-lg w-[95%] text-black font-semibold"
+                className="p-2 mb-3 bg-white  border rounded-lg w-[95%] text-black font-semibold"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
               />
@@ -222,7 +222,7 @@ const AdminProductUpdate = () => {
                   <label htmlFor="name block">Count In Stock</label> <br />
                   <input
                     type="text"
-                    className="p-4 mb-3 w-[30rem] border rounded-lg bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 text-black font-semibold "
+                    className="p-4 mb-3 w-[30rem] border rounded-lg bg-white text-black font-semibold "
                     value={stock}
                     onChange={(e) => setStock(e.target.value)}
                   />
@@ -232,15 +232,19 @@ const AdminProductUpdate = () => {
                   <label htmlFor="">Category</label> <br />
                   <select
                     placeholder="Choose Category"
-                    className="p-4 mb-3 w-[30rem] border rounded-lg bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 text-black font-semibold mr-[5rem]"
+                    className="p-4 mb-3 w-[30rem] border rounded-lg bg-white text-black font-semibold mr-[5rem]"
+                    value={category}
                     onChange={(e) => setCategory(e.target.value)}
                   >
+                    <option value="" className="bg-white">
+                      SELECT
+                    </option>
                     {categories?.map((c) => (
-                     <>
-                      <option key={c._id} value={c._id}>
-                        {c.name}
-                      </option></>
-                       
+                      <>
+                        <option key={c._id} value={c._id}>
+                          {c.name}
+                        </option>
+                      </>
                     ))}
                   </select>
                 </div>
@@ -269,4 +273,3 @@ const AdminProductUpdate = () => {
 };
 
 export default AdminProductUpdate;
-
