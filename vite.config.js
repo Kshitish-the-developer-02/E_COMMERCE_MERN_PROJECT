@@ -7,7 +7,7 @@ export default defineConfig({
   server:{
     proxy:{
       // "/api/":"https://college-project-f8n6.onrender.com",
-      "/uploads/":"https://college-project-f8n6.onrender.com"
+      // "/uploads/":"https://college-project-f8n6.onrender.com"
     }
   }
 })
