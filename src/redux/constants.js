@@ -1,4 +1,4 @@
-export const BASE_URL=""
+export const BASE_URL="https://college-project-f8n6.onrender.com"
 export const USERS_URL="/api/users"
 export const CATEGORY_URL="/api/category"
 export const PRODUCT_URL="/api/product"
